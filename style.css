@@ -1,0 +1,54 @@
+body {
+  margin: 20px;
+}
+.row {
+  text-align: center;
+}
+
+.searchbar {
+  display: block;
+  margin: 0 auto;
+}
+
+.fas,
+.fa-cloud {
+  position: relative;
+  top: 8px;
+  font-size: 25px;
+  color: #212529;
+}
+
+.temp {
+  position: relative;
+  left: -10px;
+  font-size: 40px;
+}
+
+.skies {
+  position: relative;
+  top: -2px;
+
+  line-height: 11px;
+}
+.precipitation {
+  font-size: 15px;
+}
+.precipitation {
+  position: relative;
+  top: 15px;
+  line-height: 17px;
+}
+
+small {
+  font-size: 10px;
+}
+
+.current-weather {
+  text-align: center;
+  font-size: 50px;
+}
+
+.this-week {
+  text-align: center;
+  font-size: 12px;
+}

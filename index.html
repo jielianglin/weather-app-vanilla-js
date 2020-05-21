@@ -1,19 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <style>
-      h1 {
-        color: blue;
-      }
-    </style>
+    <link href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/94de68c092.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <h1>
-      Weather app
-    </h1>
+    <div class="container">
+      <form id="search-form">
+        <input type="text" id="search-city" placeholder="Enter your city" />
+        <input type="submit" id="submit-button" value="Go" />
+      </form>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <section class="current-weather">
+        <div class="row">
+          <div class="col-3 blank"></div>
+          <div class="col-2 temp">
+            <span id="celsTemp"> </span>
+            <small><a href="#" id="back-cel-temp">°C</a> |</small
+            ><a href="#" id="farTemp"><small>°F</small></a>
+          </div>
+          <div class="col-2 skies">
+            <i class="fas fa-cloud"></i><br /><span id="skies"
+              ><small>cloudy</small>
+            </span>
+          </div>
+          <div class="col-2 humidity">
+            <span id="humidity"></span>% <br />
+            <small>humidity</small>
+          </div>
+          <div class="col-3 blank"></div>
+        </div>
+
+        <br />
+        <div class="current">
+          <h2>Berlin</h2>
+
+          <h6>
+            <span id="day">Thursday</span> <span id="hour">10</span>:<span
+              id="minutes"
+              >27</span
+            >
+          </h6>
+        </div>
+      </section>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <section class="this-week">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Mon</th>
+              <th scope="col">Tues</th>
+              <th scope="col">Wed</th>
+              <th scope="col">Thurs</th>
+              <th scope="col">Fri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3°C</td>
+              <td>2°C</td>
+              <td>4°C</td>
+              <td>6°C</td>
+              <td>8°C</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <script src="src/script.js"></script>
+    </div>
   </body>
 </html>
