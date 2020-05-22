@@ -1,5 +1,7 @@
 body {
+  padding: 20px;
   margin: 20px;
+  color: blue;
 }
 .row {
   text-align: center;
@@ -51,4 +53,8 @@ small {
 .this-week {
   text-align: center;
   font-size: 12px;
+}
+
+h5 {
+  text-align: center;
 }
