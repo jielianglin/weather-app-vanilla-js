@@ -1,10 +1,13 @@
 body {
-  padding: 20px;
+  padding: 60px;
   margin: 20px;
-  color: blue;
 }
 .row {
-  text-align: center;
+  text-align: left;
+}
+
+.current {
+  text-align: left;
 }
 
 .searchbar {
@@ -22,10 +25,14 @@ body {
 
 .temp {
   position: relative;
-  left: -10px;
-  font-size: 40px;
+  left: 10px;
+  font-size: 60px;
 }
 
+.celsTemp {
+  position: relative;
+  top: -10px;
+}
 .skies {
   position: relative;
   top: -2px;
@@ -41,6 +48,8 @@ body {
   line-height: 17px;
 }
 
+.humidity {
+}
 small {
   font-size: 10px;
 }
