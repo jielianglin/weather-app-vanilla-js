@@ -21,39 +21,61 @@
   </head>
 
   <body>
+    <section class="searchbar">
+           <div class="container">
+      <form id="search-form">
+        <input type="text" id="search-city" placeholder="Enter your city" />
+        <input type="submit" id="submit-button" value="Go" /> 
+      </form>
+</div>
+<br/>
+    </section>
     <section class="current-weather">
-      <div class="current">
-        <h2>Berlin</h2>
+      <div class="row">
+        <div class="col-3 locationDateTime">
+          <div class="current">
+            <h2>Berlin</h2>
 
-        <h6>
-          <span id="day">Thursday</span>, <span id="hour">10</span>:<span
-            id="minutes"
-            >27</span
-          >
-        </h6>
+            <h6>
+              <span id="day">Thursday</span>, <span id="hour">10</span>:<span
+                id="minutes"
+                >27</span
+              >
+            </h6>
+          </div>
+        </div>
+      
+
+        </div>
       </div>
       <br />
 
       <div class="row">
-        <div class="col-2 temp">
-          <span id="celsTemp"></span>
-          <small><a href="#" id="back-cel-temp">°C</a> |</small
-          ><a href="#" id="farTemp"><small>°F</small></a>
+        <div class="col-3 temp">
+          <span id="celsTemp">25</span>
+          <small
+            ><a href="#" id="back-cel-temp">°C</a> |
+            <a href="#" id="farTemp">°F</a>
+          </small>
         </div>
         <div class="col-3 blank"></div>
 
         <div class="col-2 skies">
-          <i class="fas fa-cloud"></i><br /><span id="skies"
-            ><small>cloudy</small>
+          <i class="fas fa-cloud"></i>
+          <br />
+          <span id="skies">
+            <small>cloudy</small>
           </span>
         </div>
-        <div class="col-2 humidity">
-          <span id="humidity"></span> <br />
+        <br />
+        <br />
+        <br />
+        <div class="humidity">
+          <span id="humidity"> 50%</span>
+          <br />
           <small>humidity</small>
         </div>
-        <div class="col-3 blank"></div>
       </div>
-
       <br />
     </section>
     <br />
@@ -85,17 +107,12 @@
     </section>
     <br />
     <br />
-    <div class="container">
-      <form id="search-form">
-        <input type="text" id="search-city" placeholder="Enter your city" />
-        <input type="submit" id="submit-button" value="Go" />
-      </form>
+
       <h5>
         <a href="https://github.com/jielianglin/weather-app-vanilla-js">
           View the code
         </a>
       </h5>
       <script src="script.js"></script>
-    </div>
   </body>
 </html>

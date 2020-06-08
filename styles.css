@@ -1,6 +1,13 @@
 body {
+  font-family: Futura;
+  border: 3px solid gray;
+  border-radius: 10px;
   padding: 60px;
-  margin: 20px;
+  margin: 80px;
+}
+
+.searchbar {
+  text-align: right;
 }
 .row {
   text-align: left;
@@ -25,35 +32,40 @@ body {
 
 .temp {
   position: relative;
+  top: -15px;
   left: 10px;
-  font-size: 60px;
+  font-size: 80px;
 }
 
 .celsTemp {
   position: relative;
-  top: -10px;
+  top: -20px;
 }
+
+.temp small {
+  position: relative;
+  top: -50px;
+}
+
 .skies {
   position: relative;
   top: -2px;
 
   line-height: 11px;
 }
-.precipitation {
-  font-size: 15px;
-}
-.precipitation {
-  position: relative;
-  top: 15px;
-  line-height: 17px;
-}
 
 .humidity {
+  font-size: 28px;
 }
 small {
   font-size: 10px;
+  color: pink;
 }
 
+.humidity small {
+  position: relative;
+  top: -23px;
+}
 .current-weather {
   text-align: center;
   font-size: 50px;
