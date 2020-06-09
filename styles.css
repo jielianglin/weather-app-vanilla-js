@@ -34,7 +34,7 @@ body {
   position: relative;
   top: -15px;
   left: 10px;
-  font-size: 80px;
+  font-size: 70px;
 }
 
 .celsTemp {
@@ -47,28 +47,37 @@ body {
   top: -50px;
 }
 
-.skies {
-  position: relative;
-  top: -2px;
-
-  line-height: 11px;
-}
-
-.humidity {
-  font-size: 28px;
-}
 small {
   font-size: 10px;
   color: pink;
 }
 
+.skies {
+  line-height: 11px;
+}
+
+.skies small {
+  position: relative;
+  top: 14px;
+}
+.humidity {
+  text-align: center;
+  font-size: 28px;
+}
+
 .humidity small {
   position: relative;
-  top: -23px;
+  top: -22px;
 }
-.current-weather {
+
+.percipitation {
   text-align: center;
-  font-size: 50px;
+  font-size: 28px;
+}
+
+.percipitation small {
+  position: relative;
+  top: -22px;
 }
 
 .this-week {
