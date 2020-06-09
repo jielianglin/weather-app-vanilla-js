@@ -3,23 +3,25 @@ body {
   border: 3px solid gray;
   border-radius: 10px;
   padding: 60px;
-  margin: 80px;
+  margin: 80px 300px 80px 300px;
 }
 
+.weatherapp {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .searchbar {
   text-align: right;
+  right: 150px;
 }
-.row {
-  text-align: left;
+
+.locationDateTime {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .current {
   text-align: left;
-}
-
-.searchbar {
-  display: block;
-  margin: 0 auto;
 }
 
 .fas,
@@ -32,14 +34,9 @@ body {
 
 .temp {
   position: relative;
-  top: -15px;
-  left: 10px;
-  font-size: 70px;
-}
-
-.celsTemp {
-  position: relative;
-  top: -20px;
+  top: -25px;
+  left: 20px;
+  font-size: 60px;
 }
 
 .temp small {
@@ -47,42 +44,53 @@ body {
   top: -50px;
 }
 
+.fa-cloud {
+  position: relative;
+  top: -20px;
+  color: gray;
+  font-size: 30px;
+}
 small {
   font-size: 10px;
   color: pink;
 }
 
-.skies {
-  line-height: 11px;
-}
-
-.skies small {
-  position: relative;
-  top: 14px;
-}
 .humidity {
-  text-align: center;
   font-size: 28px;
 }
 
 .humidity small {
   position: relative;
   top: -22px;
+  left: 7px;
 }
 
 .percipitation {
-  text-align: center;
+  position: relative;
+  left: 7px;
   font-size: 28px;
 }
 
 .percipitation small {
   position: relative;
   top: -22px;
+  left: 7px;
+}
+
+.windspeed {
+  text-align: right;
+  font-size: 28px;
+}
+.windspeed small {
+  position: relative;
+  top: -22px;
+  left: 30px;
 }
 
 .this-week {
   text-align: center;
-  font-size: 12px;
+  font-size: 20px;
+  margin: 0px 80px 0px 80px;
 }
 
 h5 {

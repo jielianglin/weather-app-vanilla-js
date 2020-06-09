@@ -21,15 +21,16 @@
   </head>
 
   <body>
+    <div class="weatherapp">
     <section class="searchbar">
-           <div class="container">
-      <form id="search-form">
-        <input type="text" id="search-city" placeholder="Enter your city" />
-        <input type="submit" id="submit-button" value="Go" /> 
-      </form>
-</div>
-<br/>
-    </section>
+      <div class="container">
+        <form id="search-form">
+          <input type="text" id="search-city" placeholder="Enter your city" />
+          <input type="submit" id="submit-button" value="Go" />
+        </form>
+      </section>
+      </div>
+      <br />
     <section class="current-weather">
       <div class="row">
         <div class="col-3 locationDateTime">
@@ -42,43 +43,42 @@
                 >27</span
               >
             </h6>
+            </div>
           </div>
         </div>
-      
-
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-3 temp">
+        <br />
+ <div class="row">
+        <div class="col-4 temp">
+          <i class="fas fa-cloud"></i>
           <span id="celsTemp">25</span>
           <small
             ><a href="#" id="back-cel-temp">°C</a> |
             <a href="#" id="farTemp">°F</a>
           </small>
         </div>
-        <div class="col-3 blank"></div>
 
-        <div class="col-1 skies">
-          <i class="fas fa-cloud"></i>
-          <br />
-          <span id="skies">
-            <small>cloudy</small>
-          </span>
-        </div>
-        <br />
+             <div class="col-1 blank"></div>
         <div class="col-1 humidity">
           <span id="humidity"> 50%</span>
           <br />
           <small>humidity</small>
         </div>
+
+               <div class="col-1 blank"></div>
         <div class="col-1 percipitation">
-          <span id="percipitation"> 1%
-          </span>
-          <br/>
+          <span id="percipitation"> 1% </span>
+          <br />
           <small>rainfall</small>
         </div>
+
+        <div class="col-1 blank"></div>
+          <div class="col-1 windspeed">
+           <span id="windspeed">15km/h</span>
+          <small>windspeed</small>
+          </div>
+
+     
+      </div>
       </div>
     </section>
 
@@ -107,11 +107,12 @@
     <br />
     <br />
 
-      <h5>
-        <a href="https://github.com/jielianglin/weather-app-vanilla-js">
-          View the code
-        </a>
-      </h5>
-      <script src="script.js"></script>
+    <h5>
+      <a href="https://github.com/jielianglin/weather-app-vanilla-js">
+        View sourcecode
+      </a>
+    </h5>
+  </div>
+    <script src="script.js"></script>
   </body>
 </html>
