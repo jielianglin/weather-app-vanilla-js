@@ -33,10 +33,14 @@ h3.innerHTML = `${minutes}`;
 function showWeather(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
+  let description = response.data.weather[0].description;
+  document.querySelector("#description").innerHTML = `${description}`;
   let celsTemp = response.data.main.temp;
   document.querySelector("#celsTemp").innerHTML = Math.round(celsTemp);
   let humidity = response.data.main.humidity;
   document.querySelector("#humidity").innerHTML = `${humidity}%`;
+  let windspeed = response.data.wind.speed;
+  document.querySelector("#windspeed").innerHTML = `${windspeed}`;
 }
 
 function search(city) {
