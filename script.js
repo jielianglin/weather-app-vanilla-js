@@ -36,7 +36,7 @@ function showWeather(response) {
   let description = response.data.weather[0].description;
   document.querySelector("#description").innerHTML = `${description}`;
   let celsTemp = response.data.main.temp;
-  document.querySelector("#celsTemp").innerHTML = Math.round(celsTemp);
+  document.querySelector("#temperature").innerHTML = Math.round(celsTemp);
   let humidity = response.data.main.humidity;
   document.querySelector("#humidity").innerHTML = `${humidity}%`;
   let windspeed = response.data.wind.speed;
@@ -60,6 +60,30 @@ function submitCity(event) {
   search(city);
 }
 
-search("Berlin");
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrTemp = (celsTemp * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsTemp);
+}
+let celsTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+search("Berlin");

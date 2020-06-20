@@ -1,14 +1,14 @@
 body {
   font-family: Futura;
-  border: 3px solid gray;
+  border: 1px solid gray;
   border-radius: 10px;
   padding: 60px;
   margin: 80px 300px 80px 300px;
 }
 
 .weatherapp {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .searchbar {
   text-align: right;
@@ -28,13 +28,6 @@ body {
   margin: 0px 80px 10 px 80px;
   padding: 40px 0px 0px;
 }
-.fas,
-.fa-cloud {
-  position: relative;
-  top: 8px;
-  font-size: 25px;
-  color: #212529;
-}
 
 .temp {
   position: relative;
@@ -48,6 +41,14 @@ body {
   top: -40px;
 }
 
+.temp small .active {
+  color: black;
+  cursor: default;
+}
+
+.temp small .active:hover {
+  text-decoration: underline;
+}
 .fa-cloud {
   position: relative;
   top: -10px;
