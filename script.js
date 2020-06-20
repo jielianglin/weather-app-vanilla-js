@@ -60,5 +60,6 @@ function submitCity(event) {
   search(city);
 }
 
+search("Berlin");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
