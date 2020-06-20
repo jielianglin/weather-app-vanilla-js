@@ -43,48 +43,41 @@
             <div class="locationDateTime">
               <h2></h2>
             <h6>
-              <ul>
-                <li>
-              <span id="day">Thursday</span>, <span id="hour">10</span>:<span
+
+              <span id="day"></span>, <span id="hour"></span>:<span
                 id="minutes"
-                >27</span
+                ></span
               >
-              </li>
-              <li>
-              <span id="description">Cloudy</span>
-              </ul>
-              </li>
             </h6>
  </div>
 
         <div class= "weatherConditions">
  <div class="row">
-    <div class="col-2 blank"></div>
-        <div class="col-4 temp">
+  
+        <div class="col-8 temp">
           <img src= ""
           id="icon"/>
           <span id="temperature"></span>
-          <div class="clearfix weather-temperature"></div>
+       
           <small
             ><a href="#" id="celsius-link" class= "active">°C</a> |
             <a href="#" id="fahrenheit-link">°F</a>
           </small>
-          </div>
-        </div>
-
-             <div class="col-1 blank"></div>
-        <div class="col-1 humidity">
-          <span id="humidity"> 50%</span>
-          <br />
-          <small>humidity</small>
-        </div>
-
-               <div class="col-1 blank"></div>
-
        
-          <div class="col-1 windspeed">
-           <span id="windspeed">15</span><small>km/h</small>
-          <small>windspeed</small>
+        </div>
+
+             
+        <div class="col-4 other">
+        <small><span id="description"></span>
+          <br/>
+
+        Humidity: <span id="humidity"> 50%</span>
+<br/>
+
+
+
+         
+        Windspeed:  <span id="windspeed">15</span>km/h</small>
           </div>
 
      </div>
@@ -114,14 +107,13 @@
         </tbody>
       </table>
     </section>
-    <br />
-    <br />
 
-    <h5>
+    <h4>
       <a href="https://github.com/jielianglin/weather-app-vanilla-js">
-        View sourcecode
+       Open-source code
       </a>
-    </h5>
+      by Jie Liang Lin 
+    </h4>
   </div>
     <script src="script.js"></script>
   </body>

@@ -1,9 +1,9 @@
 body {
-  font-family: Futura;
+  font-family: "Courier New", Courier, monospace;
   border: 1px solid gray;
   border-radius: 10px;
   padding: 60px;
-  margin: 80px 300px 80px 300px;
+  margin: 40px 500px 80px 80px;
 }
 
 .weatherapp {
@@ -11,34 +11,39 @@ body {
   padding-right: 10px;
 }
 .searchbar {
-  text-align: right;
-  right: 150px;
+  text-align: center;
 }
 
 .locationDateTime {
-  padding-top: 10px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 38px;
 }
 
-.current {
-  text-align: left;
+h2 {
+  padding: 10px;
 }
-
-.weatherConditions {
-  border: gray 1px solid;
-  margin: 0px 80px 10 px 80px;
-  padding: 40px 0px 0px;
+h6 {
+  font-style: italic;
+}
+h6:first-letter {
+  text-transform: capitalize;
 }
 
 .temp {
   position: relative;
   top: -25px;
-
-  font-size: 60px;
+  font-size: 68px;
 }
 
+img {
+  position: relative;
+  top: -5px;
+}
 .temp small {
   position: relative;
   top: -40px;
+  left: -30px;
 }
 
 .temp small .active {
@@ -49,50 +54,24 @@ body {
 .temp small .active:hover {
   text-decoration: underline;
 }
-.fa-cloud {
+
+small {
   position: relative;
   top: -10px;
+  font-size: 12px;
   color: gray;
-  font-size: 30px;
 }
 
-li {
-  list-style: none;
-  position: relative;
-  left: -37px;
-}
-li:first-letter {
+.other:first-letter {
   text-transform: capitalize;
 }
-small {
-  font-size: 10px;
-  color: gray;
-}
-
-.humidity {
-  font-size: 28px;
-}
-
-.humidity small {
-  position: relative;
-  top: -22px;
-  left: 7px;
-}
-
-.windspeed {
-  font-size: 28px;
-}
-.windspeed small {
-  position: relative;
-  top: -22px;
-}
-
 .this-week {
   text-align: center;
   font-size: 20px;
-  margin: 0px 80px 0px 80px;
+  margin: 0px 40px 0px 40px;
 }
 
-h5 {
+h4 {
+  font-size: 12px;
   text-align: center;
 }
