@@ -30,7 +30,7 @@ console.log(minutes);
 let h3 = document.querySelector("#minutes");
 h3.innerHTML = `${minutes}`;
 
-function showWeather(response) {
+function displayWeather(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
   let description = response.data.weather[0].description;
@@ -48,10 +48,49 @@ function showWeather(response) {
   );
 }
 
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="max-min-temp">
+        <td><strong>°</strong>°</td>
+        <td><strong>°</strong>°</td>
+        <td><strong>°</strong>°</td>
+        <td><strong>°</strong>°</td>
+    <td><strong>°</strong>°</td>
+     <td><strong>°</strong>°</td>
+    </tbody>
+  </table>
+`;
+}
+
 function search(city) {
   let apiKey = "fa0c9f80c461fd9a23378c08029da98c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}`).then(showWeather);
+  axios.get(apiUrl).then(displayWeather);
+
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function submitCity(event) {
@@ -86,4 +125,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
 search("Berlin");
