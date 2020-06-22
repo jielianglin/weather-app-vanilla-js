@@ -35,7 +35,7 @@ function displayWeather(response) {
   document.querySelector("h2").innerHTML = response.data.name;
   let description = response.data.weather[0].description;
   document.querySelector("#description").innerHTML = `${description}`;
-  let celsTemp = response.data.main.temp;
+  celsTemp = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(celsTemp);
   let humidity = response.data.main.humidity;
   document.querySelector("#humidity").innerHTML = `${humidity}%`;
@@ -115,7 +115,7 @@ function displayCelsiusTemp(event) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsTemp);
 }
-let celsTemp = null;
+let celsTemp = 0;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
