@@ -60,6 +60,11 @@ function displayForecast(response) {
     <thead>
       <tr>
         <th scope="col"></th>
+                <th scope="col"></th>
+                        <th scope="col"></th>
+                                <th scope="col"></th>
+                                        <th scope="col"></th>
+                                                <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -67,10 +72,19 @@ function displayForecast(response) {
         <td><img src = "http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png"/></td>
+        <td></td> 
+        <td></td> 
+        <td></td> 
+        <td></td> 
+        <td></td> 
       </tr>
       <tr class="max-min-temp">
         <td>${Math.round(forecast.main.temp)}°</td>
-
+<td></td> 
+<td></td> 
+<td></td> 
+<td></td> 
+<td></td> 
     </tbody>
   </table>
 
