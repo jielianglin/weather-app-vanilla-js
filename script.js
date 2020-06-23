@@ -1,34 +1,26 @@
-let now = new Date();
+function formatDate(timestamp) {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-console.log(day);
-
-let h1 = document.querySelector("#day");
-h1.innerHTML = `${day}`;
-
-let hour = now.getHours();
-console.log(hour);
-
-let h2 = document.querySelector("#hour");
-h2.innerHTML = `${hour}`;
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let now = document.querySelector("#day-and-time");
+  now.innerHTML = `${day} ${hours}: ${minutes}`;
 }
-console.log(minutes);
 
-let h3 = document.querySelector("#minutes");
-h3.innerHTML = `${minutes}`;
+formatDate();
 
 function displayWeather(response) {
   console.log(response.data);
@@ -64,7 +56,7 @@ function displayForecast(response) {
                         <th scope="col"></th>
                                 <th scope="col"></th>
                                         <th scope="col"></th>
-                                                <th scope="col"></th>
+                                        
       </tr>
     </thead>
     <tbody>
