@@ -5,7 +5,6 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   let days = [
     "Sunday",
     "Monday",
@@ -18,10 +17,21 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   let now = document.querySelector("#day-and-time");
   now.innerHTML = `${day} ${hours}: ${minutes}`;
+  return `${day} ${formatHours(timestamp)}`;
 }
 
 formatDate();
 
+function formatHours(timestamp) {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
 function displayWeather(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
@@ -33,6 +43,8 @@ function displayWeather(response) {
   document.querySelector("#humidity").innerHTML = `${humidity}%`;
   let windspeed = response.data.wind.speed;
   document.querySelector("#windspeed").innerHTML = `${windspeed}`;
+  let date = document.querySelector("#day-and-time");
+  date.innerHTML = formatDate(response.data.dt * 1000);
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
@@ -51,7 +63,7 @@ function displayForecast(response) {
   <table class="table">
     <thead>
       <tr>
-        <th scope="col"></th>
+        <th scope="col">${formatHours(forecast.dt * 1000)}</th>
                 <th scope="col"></th>
                         <th scope="col"></th>
                                 <th scope="col"></th>
