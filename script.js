@@ -49,8 +49,9 @@ function displayWeather(response) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.list[0]);
   let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
   forecastElement.innerHTML = `
   <table class="table">
     <thead>
@@ -65,7 +66,9 @@ function displayForecast(response) {
     </thead>
     <tbody>
       <tr>
-        <td></td>
+        <td><img src = "http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"/></td>
         <td></td>
         <td></td>
         <td></td>
@@ -73,12 +76,24 @@ function displayForecast(response) {
         <td></td>
       </tr>
       <tr class="max-min-temp">
-        <td><strong>°</strong>°</td>
-        <td><strong>°</strong>°</td>
-        <td><strong>°</strong>°</td>
-        <td><strong>°</strong>°</td>
-    <td><strong>°</strong>°</td>
-     <td><strong>°</strong>°</td>
+        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+    forecast.main.temp_min
+  )}°</td>
+        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+    forecast.main.temp_min
+  )}°</td>
+        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+    forecast.main.temp_min
+  )}°</td>
+        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+    forecast.main.temp_min
+  )}°</td>
+        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+    forecast.main.temp_min
+  )}°</td>
+        <td><strong>${Math.round(
+          forecast.main.temp_max
+        )}°</strong>°${Math.round(forecast.main.temp_min)}</td>
     </tbody>
   </table>
 `;
@@ -89,7 +104,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 
-  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
