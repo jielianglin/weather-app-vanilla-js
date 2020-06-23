@@ -51,52 +51,31 @@ function displayWeather(response) {
 function displayForecast(response) {
   console.log(response.data.list[0]);
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  forecastElement.innerHTML = `
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
   <table class="table">
     <thead>
       <tr>
         <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class = "forecast-icons">
         <td><img src = "http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png"/></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
       <tr class="max-min-temp">
-        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-    forecast.main.temp_min
-  )}°</td>
-        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-    forecast.main.temp_min
-  )}°</td>
-        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-    forecast.main.temp_min
-  )}°</td>
-        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-    forecast.main.temp_min
-  )}°</td>
-        <td><strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-    forecast.main.temp_min
-  )}°</td>
-        <td><strong>${Math.round(
-          forecast.main.temp_max
-        )}°</strong>°${Math.round(forecast.main.temp_min)}</td>
+        <td>${Math.round(forecast.main.temp)}°</td>
+
     </tbody>
   </table>
+
 `;
+  }
 }
 
 function search(city) {
