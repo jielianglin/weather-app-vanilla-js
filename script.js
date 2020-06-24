@@ -1,10 +1,6 @@
 function formatDate(timestamp) {
-  let date = new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  let date = new Date(timestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -15,15 +11,11 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  let now = document.querySelector("#day-and-time");
-  now.innerHTML = `${day} ${hours}: ${minutes}`;
   return `${day} ${formatHours(timestamp)}`;
 }
 
-formatDate();
-
 function formatHours(timestamp) {
-  let date = new Date();
+  let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -32,6 +24,7 @@ function formatHours(timestamp) {
 
   return `${hours}:${minutes}`;
 }
+
 function displayWeather(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
@@ -61,8 +54,9 @@ function displayForecast(response) {
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
-
+ 
     <div class= "col-2 forecasted-hours"> 
+
     <h7>   
       ${formatHours(forecast.dt * 1000)}
     </h7>    
@@ -74,7 +68,6 @@ function displayForecast(response) {
         <strong>${Math.round(forecast.main.temp)}°</strong> 
        
         </div> 
-        
         </div> 
  
 `;
