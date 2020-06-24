@@ -36,10 +36,12 @@ h6:first-letter {
   font-size: 68px;
 }
 
-img {
+.temp img {
   position: relative;
   top: -5px;
+  font-size: 30px;
 }
+
 .temp small {
   position: relative;
   top: -40px;
@@ -65,13 +67,17 @@ small {
 .other:first-letter {
   text-transform: capitalize;
 }
-.this-week {
-  text-align: center;
-  font-size: 20px;
-  margin: 0px 40px 0px 40px;
-}
 
 h4 {
   font-size: 12px;
   text-align: center;
+}
+
+.forecast {
+  text-align: center;
+}
+
+.forecast img {
+  width: 60px;
+  height: auto;
 }

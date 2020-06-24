@@ -45,7 +45,7 @@ function displayWeather(response) {
   document.querySelector("#windspeed").innerHTML = `${windspeed}`;
   let date = document.querySelector("#day-and-time");
   date.innerHTML = formatDate(response.data.dt * 1000);
-  let icon = document.querySelector("#icon");
+  let icon = document.querySelector("#weather-icon");
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -55,43 +55,28 @@ function displayWeather(response) {
 function displayForecast(response) {
   console.log(response.data.list[0]);
   let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">${formatHours(forecast.dt * 1000)}</th>
-                <th scope="col"></th>
-                        <th scope="col"></th>
-                                <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        
-      </tr>
-    </thead>
-    <tbody>
-      <tr class = "forecast-icons">
-        <td><img src = "http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"/></td>
-        <td></td> 
-        <td></td> 
-        <td></td> 
-        <td></td> 
-        <td></td> 
-      </tr>
-      <tr class="max-min-temp">
-        <td>${Math.round(forecast.main.temp)}°</td>
-<td></td> 
-<td></td> 
-<td></td> 
-<td></td> 
-<td></td> 
-    </tbody>
-  </table>
 
+    <div class= "col-2 forecasted-hours"> 
+    <h7>   
+      ${formatHours(forecast.dt * 1000)}
+    </h7>    
+ <img src = "http://openweathermap.org/img/wn/${
+   forecast.weather[0].icon
+ }@2x.png" 
+  />
+        <div class = "forecast-temp">
+        <strong>${Math.round(forecast.main.temp)}°</strong> 
+       
+        </div> 
+        
+        </div> 
+ 
 `;
   }
 }
