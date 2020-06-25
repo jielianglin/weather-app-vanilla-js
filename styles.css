@@ -2,8 +2,8 @@ body {
   font-family: "Courier New", Courier, monospace;
   border: 1px solid gray;
   border-radius: 10px;
-  padding: 60px;
-  margin: 40px 500px 80px 80px;
+  padding: 60px 60px 40px 60px;
+  margin: 40px 290px 80px 290px;
 }
 
 .weatherapp {
@@ -12,6 +12,15 @@ body {
 }
 .searchbar {
   text-align: center;
+}
+
+.search-form {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  height: 39px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
 }
 
 .locationDateTime {
@@ -30,16 +39,17 @@ h6:first-letter {
   text-transform: capitalize;
 }
 
+.weather-icon img {
+  position: relative;
+  top: -32px;
+  left: 60px;
+  width: 110px;
+}
+
 .temp {
   position: relative;
   top: -25px;
   font-size: 68px;
-}
-
-.temp img {
-  position: relative;
-  top: -5px;
-  font-size: 30px;
 }
 
 .temp small {
@@ -49,7 +59,7 @@ h6:first-letter {
 }
 
 .temp small .active {
-  color: black;
+  color: #757575;
   cursor: default;
 }
 
@@ -61,11 +71,16 @@ small {
   position: relative;
   top: -10px;
   font-size: 12px;
-  color: gray;
+  color: #757575;
 }
 
-.other:first-letter {
+.otherConditions:first-letter {
   text-transform: capitalize;
+}
+
+.weatherforecast {
+  position: relative;
+  top: -25px;
 }
 
 h4 {
@@ -76,8 +91,17 @@ h4 {
 .forecast {
   text-align: center;
 }
-
+.forecast-hours {
+  max-width: 160px;
+}
 .forecast img {
+  display: block;
+  margin: 0 auto;
   width: 60px;
   height: auto;
+}
+
+.link {
+  position: relative;
+  top: -10px;
 }

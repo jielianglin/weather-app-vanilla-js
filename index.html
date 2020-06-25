@@ -29,7 +29,7 @@
 
            
             <div class="col-9">
-          <input type="search" id="search-city" placeholder="Enter city" class="form-control"/>
+          <input type="search" id="search-city" placeholder="Enter city" class="search-form"/>
           </div>
           <div class="col-3">
           <input type="submit" id="submit-button" value="Search" class="btn btn-primary"/>
@@ -50,19 +50,19 @@
         <div class= "currentweatherConditions">
  <div class="row">
   
-        <div class="col-8 temp">
+        <div class="col-3 weather-icon">
           <img src= ""
           id="weather-icon"/>
+          </div>
+          <div class="col-5 temp">
           <span id="temperature"></span>
        
           <small
             ><a href="#" id="celsius-link" class= "active">°C</a> |
             <a href="#" id="fahrenheit-link">°F</a>
-          </small>
-       
-        </div>
-
-             
+          </small>       
+</div>
+    
         <div class="col-4 otherConditions">
         <small><span id="description"></span>
           <br/>
@@ -75,19 +75,22 @@
       </div>
       </div>
     </section>
+    <div class="container weatherforecast">
+<hr class="one"> 
+    <section class="row forecast" id="forecast">
 
-    <section class="forecast" id="forecast">
-<div class = "row forecast">
-
-</div>
     </section>
+ <hr class="two"/>
+  </div>
 
+<section class= link> 
     <h4>
       <a href="https://github.com/jielianglin/weather-app-vanilla-js">
        Open-source code
       </a>
       by Jie Liang Lin 
     </h4>
+    </section>
   </div>
     <script src="script.js"></script>
   </body>
