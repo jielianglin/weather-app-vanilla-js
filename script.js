@@ -64,8 +64,9 @@ function displayForecast(response) {
  }@2x.png" 
   />
         <div class = "forecast-temp">
-        <strong>${Math.round(forecast.main.temp)}°</strong> 
-       
+        <strong> <span id = "forecast-cels-temp"> ${Math.round(
+          forecast.main.temp
+        )}</span>°  </strong>
         </div> 
         </div> 
  
@@ -88,15 +89,26 @@ function submitCity(event) {
   search(city);
 }
 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrTemp = (celsTemp * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrTemp);
-}
+function displayFahrenheitConversions(event) {
+  function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrTemp = (celsTemp * 9) / 5 + 32;
+    temperature.innerHTML = Math.round(fahrTemp);
+  }
+  displayFahrenheitTemp(event);
 
+  function displayForecastFahrTemp(event) {
+    event.preventDefault();
+    let forecastTemp = document.querySelector("#forecast-cels-temp");
+    console.log(forecastTemp);
+    let forecastFahrTemp = (forecastTemp * 9) / 5 + 32;
+    console.log(forecastFahrTemp);
+  }
+  displayForecastFahrTemp(event);
+}
 function displayCelsiusTemp(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -104,13 +116,14 @@ function displayCelsiusTemp(event) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsTemp);
 }
+
 let celsTemp = 0;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+fahrenheitLink.addEventListener("click", displayFahrenheitConversions);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);

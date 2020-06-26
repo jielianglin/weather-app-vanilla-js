@@ -14,13 +14,14 @@ body {
   text-align: center;
 }
 
-.search-form {
+.search-input {
   border: 1px solid #e5e5e5;
   border-radius: 5px;
   height: 39px;
   width: 100%;
   padding: 2px 23px 2px 30px;
   outline: 0;
+  background-color: white;
 }
 
 .locationDateTime {
