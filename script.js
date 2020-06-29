@@ -102,21 +102,35 @@ function displayFahrenheitConversions(event) {
 
   function displayForecastFahrTemp(event) {
     event.preventDefault();
-    let forecastTemp = document.querySelector("#forecast-cels-temp");
-    console.log(forecastTemp);
-    let forecastFahrTemp = (forecastTemp * 9) / 5 + 32;
-    console.log(forecastFahrTemp);
+    let forecastTemp = document.querySelectorAll("#forecast-cels-temp");
+    forecastTemp.forEach((forecast) => {
+      let forecastValue = forecast.innerHTML;
+      forecast.innerHTML = Math.round((forecastValue * 9) / 5 + 32);
+    });
   }
   displayForecastFahrTemp(event);
 }
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsTemp);
-}
 
+function displayCelsiusConversions(event) {
+  function displayCelsiusTemp(event) {
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperature = document.querySelector("#temperature");
+    temperature.innerHTML = Math.round(celsTemp);
+  }
+  displayCelsiusTemp;
+
+  function displayForecastCelsTemp(event) {
+    event.preventDefault();
+    let forecastTemp = document.querySelectorAll("#forecast-cels-temp");
+    forecastTemp.forEach((forecast) => {
+      let forecastValue = forecast.innerHTML;
+      forecast.innerHTML = Math.round(((forecastValue - 32) * 5) / 9);
+    });
+  }
+  displayForecastCelsTemp(event);
+}
 let celsTemp = 0;
 
 let form = document.querySelector("#search-form");
@@ -126,6 +140,6 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitConversions);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
+celsiusLink.addEventListener("click", displayCelsiusConversions);
 
 search("Berlin");
