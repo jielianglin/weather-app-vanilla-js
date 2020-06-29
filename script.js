@@ -109,6 +109,8 @@ function displayFahrenheitConversions(event) {
     });
   }
   displayForecastFahrTemp(event);
+  fahrenheitLink.removeEventListener("click", displayFahrenheitConversions);
+  celsiusLink.addEventListener("click", displayCelsiusConversions);
 }
 
 function displayCelsiusConversions(event) {
@@ -130,7 +132,10 @@ function displayCelsiusConversions(event) {
     });
   }
   displayForecastCelsTemp(event);
+  celsiusLink.removeEventListener("click", displayCelsiusConversions);
+  fahrenheitLink.addEventListener("click", displayFahrenheitConversions);
 }
+
 let celsTemp = 0;
 
 let form = document.querySelector("#search-form");
