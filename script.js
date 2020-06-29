@@ -119,7 +119,7 @@ function displayCelsiusConversions(event) {
     let temperature = document.querySelector("#temperature");
     temperature.innerHTML = Math.round(celsTemp);
   }
-  displayCelsiusTemp;
+  displayCelsiusTemp(event);
 
   function displayForecastCelsTemp(event) {
     event.preventDefault();
